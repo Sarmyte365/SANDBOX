@@ -33,13 +33,10 @@ export const generateProverbStory = async (proverb: string) => {
 
 export const generateProverbIllustration = async (proverb: string) => {
   const ai = getAI();
-  // Prompt optimized for general Latvian proverbs using a consistent artistic style
   const prompt = `A cinematic, moody, and highly detailed artistic masterpiece illustrating the Latvian proverb "${proverb}". 
   Style: Traditional Latvian folk art blended with atmospheric realism. 
   Elements: Use warm light against dark, rustic backgrounds. Feature symbols mentioned in the proverb. 
-  If the proverb mentions work, show a stylized person in a field or workshop with Latvian ethnographic patterns. 
-  If it's about nature, use deep forest or meadow aesthetics. 
-  The lighting should be dramatic (chiaroscuro), suggesting a cozy candlelit evening or a misty sunrise. 
+  The lighting should be dramatic (chiaroscuro), suggesting a cozy candlelit evening. 
   Oil painting texture, warm tones, amber and deep wood colors.`;
 
   const response = await ai.models.generateContent({

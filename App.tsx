@@ -40,9 +40,9 @@ const App: React.FC = () => {
       const data = await generateProverbStory(currentProverb);
       setStoryData(data);
       setStatus(AppStatus.IDLE);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError("Neizdevās ielādēt skaidrojumu. Lūdzu, mēģiniet vēlreiz.");
+      setError("Neizdevās ielādēt skaidrojumu. Mēģiniet vēlreiz.");
       setStatus(AppStatus.ERROR);
     }
   };
@@ -55,9 +55,9 @@ const App: React.FC = () => {
       const url = await generateProverbIllustration(currentProverb);
       setImageUrl(url);
       setStatus(AppStatus.IDLE);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError("Neizdevās ģenerēt ilustrāciju. Lūdzu, mēģiniet vēlreiz.");
+      setError("Neizdevās ģenerēt ilustrāciju. Mēģiniet vēlreiz.");
       setStatus(AppStatus.ERROR);
     }
   };
